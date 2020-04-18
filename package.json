@@ -1,0 +1,70 @@
+{
+  "name": "ChatApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "yarn rn run-android",
+    "ios": "yarn rn run-ios --simulator 'iPhone 8'",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "rn": "react-native"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.9.0",
+    "@types/react-native-dotenv": "^0.2.0",
+    "@types/react-native-vector-icons": "^6.4.5",
+    "@types/react-redux": "^7.1.7",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
+    "@types/socket.io-client": "^1.4.32",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-crypto-js": "^1.0.0",
+    "react-native-dropdownalert": "^4.2.1",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-router-flux": "^4.2.0",
+    "react-native-screens": "^2.4.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-redux": "^7.2.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "@react-native-community/eslint-config": "^1.0.0",
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.34",
+    "@types/react-native": "^0.62.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "babel-jest": "^25.3.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.3.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-dotenv": "^0.2.0",
+    "react-native-typescript-transformer": "^1.2.13",
+    "react-test-renderer": "16.11.0",
+    "ts-jest": "^25.3.1",
+    "types": "^0.1.1",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}
