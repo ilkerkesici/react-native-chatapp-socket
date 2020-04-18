@@ -5,9 +5,9 @@
 ## :star: Features
 
 - Chat with users as real-time
-- Take custom drop-down alert when message received
+- See custom drop-down alert when message received
 - See last seen status of the user
-- See if you don't read the message
+- See if the message is unread
 
 ![](./assets/dropdown_usage.gif)
 
