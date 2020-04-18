@@ -20,7 +20,7 @@
 ## :arrow_down: Installation
 
 #### Install backend
-Install Node.js API from here: <a href="https://github.com/ilkerkesici/node-chatapp-backend-socket.git">link</a>
+Install Node.js API from here: <a href="https://github.com/ilkerkesici/node-chatapp-backend-socket.git">https://github.com/ilkerkesici/node-chatapp-backend-socket.git</a>
 
 ```sh
 git clone https://github.com/ilkerkesici/node-chatapp-backend-socket.git
