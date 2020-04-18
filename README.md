@@ -5,13 +5,17 @@
 ## :star: Features
 
 - Chat with users as real-time
-- See last seen status of the user
 - Take custom drop-down alert when message received
+- See last seen status of the user
+- See if you don't read the message
 
-## :arrow_forward: Usage
+![](./assets/dropdown_usage.gif)
 
-### Note on the legacy CLI
-There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. If you wish to not use `npx`, you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
+![](./assets/online_status.gif)
+
+![](./assets/info_read.gif)
+
+
 
 ## :arrow_down: Installation
 
@@ -39,6 +43,16 @@ yarn install
 cd ios && pod install && cd .. # CocoaPods on iOS needs this extra step
 ```
 
+#### Add .env file
+
+Create .env file on your project root directory and then add these lines:
+
+```sh
+API_KEY= YOUR_API_URL  # Add your API url
+SOCKET_IP=YOUR_SOCKET_URL  # Add your socket url. If your socket backend is in your API, you can write your API url here
+ENV_SECRET_KEY=YOUR_SECRET_KEY. # Add your secret key
+```
+
 
 #### Start
 
@@ -46,6 +60,11 @@ cd ios && pod install && cd .. # CocoaPods on iOS needs this extra step
 yarn ios    # For ios
 yarn android    # For android
 ```
+
+## :warning: Dependency
+
+### Note on the legacy CLI
+There seems to be quite some confusion about the legacy CLI. This template only works with the new CLI. Make sure you have uninstalled the legacy `react-native-cli` first (`npm uninstall -g react-native-cli`), for the below command to work. If you wish to not use `npx`, you can also install the new CLI globally (`npm i -g @react-native-community/cli` or `yarn global add @react-native-community/cli`).
 
 
 ## :bookmark: License
