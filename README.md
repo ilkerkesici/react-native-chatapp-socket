@@ -20,10 +20,10 @@
 ## :arrow_down: Installation
 
 #### Install backend
-Install Node.js API from here: <a href="http://google.com">link</a>
+Install Node.js API from here: <a href="https://github.com/ilkerkesici/node-chatapp-backend-socket.git">link</a>
 
 ```sh
-git clone https://github.com/ilkerkesici/react-native-chatapp-socket.git  #Changing
+git clone https://github.com/ilkerkesici/node-chatapp-backend-socket.git
 ```
 #### Clone this repository
 
