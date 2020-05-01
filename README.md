@@ -8,6 +8,7 @@
 - See custom drop-down alert when message received
 - See last seen status of the user
 - See if the message is unread
+- Basic Login and Registeration process
 
 ![](./assets/dropdown_usage.gif)
 
