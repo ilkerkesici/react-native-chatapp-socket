@@ -56,17 +56,6 @@ const App = () => {
     </View>);
 };
 
-const AssetiveTouchButton = () => {
-  return(
-    <TouchableOpacity activeOpacity={1} style={styles.buttonContaienr}>
-      <View style={styles.thirdLayer}>
-        <View style={styles.secondLayer}>
-          <View style={styles.firstLayer} />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-}
 
 const styles = StyleSheet.create({
   buttonContaienr: {
