@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text } from 'react-native';
 import { styles } from './AllMessage.style';
 import { Header, ListItem } from '../../../components';
 import { useSelector } from 'react-redux';
-import { IRootState } from '../../../store';
+import { IRootState, store } from '../../../store';
 import { getAllMessagesList } from './AllMessage.action';
 import { Actions } from 'react-native-router-flux';
 
@@ -11,7 +11,7 @@ import { Actions } from 'react-native-router-flux';
 
 
 export const AllMessages = () => {
-
+    const [language, setLanguage] = useState(store.getState().AppLanguageResponse.currentLanguage.ALL_MESSAGES_SCREEN);
     useEffect(() => {
         // ComponentDidMount
         getAllMessagesList();
@@ -19,7 +19,7 @@ export const AllMessages = () => {
     const messages = useSelector<IRootState, any>((r_state: IRootState) => r_state.MessageResponse.all_messages);
     return (
         <View style={styles.container}>
-            <Header title={'Messages'} />
+            <Header title={language.HEADER} />
             <View style={styles.container}>
             <FlatList
                     data={messages}

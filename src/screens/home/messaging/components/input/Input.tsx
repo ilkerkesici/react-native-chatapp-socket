@@ -4,9 +4,11 @@ import { styles } from './Input.style';
 import { SECONDARY_COLOR } from '../../../../../styles/Colors';
 import { SendIcon } from '../../../../../components';
 import { sendMessage } from '../../Messaging.actions';
+import { store } from '../../../../../store';
 
 
 export const MessagingInput = (props: IMessageInput) => {
+    const [language, setLanguage] = useState(store.getState().AppLanguageResponse.currentLanguage.MESSAGING_SCREEN);
     const [text, setText] = useState('');
     return (
         <View style={styles.container}>
@@ -14,7 +16,7 @@ export const MessagingInput = (props: IMessageInput) => {
                 <TextInput
                     value={text}
                     onChangeText={(text) => setText(text)}
-                    placeholder={"Write..."}
+                    placeholder={language.WRITE + '...'}
                     style={styles.textInput}
                     placeholderTextColor={SECONDARY_COLOR}
                     multiline

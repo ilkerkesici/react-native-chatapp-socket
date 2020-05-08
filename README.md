@@ -7,6 +7,7 @@
 - Chat with users as real-time
 - See last seen status of the user
 - Take custom drop-down alert when message received
+- Multilanguage Support
 
 ## :arrow_forward: Usage
 

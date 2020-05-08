@@ -10,7 +10,9 @@ import React from 'react';
 import {
   StatusBar,
   View,
-  AppState
+  AppState,
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native';
 import { Provider } from "react-redux";
 import { store } from './src/store';
@@ -43,14 +45,64 @@ socket.on("mesage_general", (msg: any) => {
 
 const App = () => {
   return (
+    <View style={{flex: 1, alignSelf:'stretch'}}>
     <Provider store={store}>
       <StatusBar barStyle="light-content" backgroundColor={PRIMARY_DARK_COLOR} />
       <View style={{flex: 1, backgroundColor: WHITE_COLOR}}>
         <RouterComponent />
         <Toast />
       </View>
-    </Provider>);
+    </Provider>
+    </View>);
 };
+
+const AssetiveTouchButton = () => {
+  return(
+    <TouchableOpacity activeOpacity={1} style={styles.buttonContaienr}>
+      <View style={styles.thirdLayer}>
+        <View style={styles.secondLayer}>
+          <View style={styles.firstLayer} />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
+  buttonContaienr: {
+    width: 60,
+    height: 60,
+    borderRadius: 5,
+    backgroundColor: '#212121',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  thirdLayer:{
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255,255,255, 0.4)',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  secondLayer:{
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'rgba(255,255,255, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  firstLayer:{
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
 
 export default App;
 

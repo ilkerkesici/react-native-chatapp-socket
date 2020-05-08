@@ -31,3 +31,7 @@ export const MESSAGE_TRIGGER = 'message_trigger';
 export const IS_END_CHANGED = 'is_end_changed';
 export const FLATLIST_CHANGED = 'flatlist_changed';
 export const ALL_MESSAGES_CHANGED = 'all_messages_changed';
+
+//App Language Action Types
+export const LANGUAGE = 'language_cahnged'; 
+export const CURRENT_LANGUAGE_STRING = 'app_language_string_changed';

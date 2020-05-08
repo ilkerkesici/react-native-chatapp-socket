@@ -1,7 +1,8 @@
 import { getUserInfo, APIHelper } from "../../helpers"
+import { Platform, NativeModules } from 'react-native'; 
 import { Actions } from "react-native-router-flux";
 import { store } from "../../store";
-import { USER_CHANGED } from "../../reducers/Types";
+import { USER_CHANGED, LANGUAGE } from "../../reducers/Types";
 import { socket } from "../../containers/socket";
 
 /**
@@ -13,6 +14,7 @@ import { socket } from "../../containers/socket";
 export const initial = async () => {
     let user;
     const dispatch = store.dispatch;
+    await languageDetactor();
     try{
         let user = await getUserInfo();
         if(!user){
@@ -26,4 +28,25 @@ export const initial = async () => {
     }catch(err){
 
     }
+}
+
+/**
+ * Detect language and update 
+ */
+export const languageDetactor = async () => {
+    try{
+        // Determine phone language
+        let language = null;
+        if (Platform.OS == 'ios')
+            language = NativeModules.SettingsManager.settings.AppleLocale;
+        else
+            language = NativeModules.I18nManager.localeIdentifier;
+        // Read language data
+        let customData;
+        if (language === 'tr_TR')
+            customData = require(`../../assets/languages/tr.json`);
+        else customData = require(`../../assets/languages/en.json`); 
+        store.dispatch({ type: LANGUAGE, payload: customData });
+        return;
+    }catch(err){ return }
 }

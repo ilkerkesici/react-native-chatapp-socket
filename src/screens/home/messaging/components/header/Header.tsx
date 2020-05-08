@@ -4,11 +4,14 @@ import { socket } from '../../../../../containers';
 import { Actions } from 'react-native-router-flux';
 import { getUserInfo } from '../../Messaging.actions';
 import { dateStringToTime } from '../message_list/components/baloon/Baloon.helper';
+import { store } from '../../../../../store';
 
-const LOADING_STRING = 'Loading...';
+
 
 // Socket listener here for online user
 export const MessagingHeader = (props: IMessageingHeader) => {
+    const [language, setLanguage] = useState(store.getState().AppLanguageResponse.currentLanguage.MESSAGING_SCREEN);
+    const LOADING_STRING = language.LOADING + '...';
     const [online, setOnline] = useState(LOADING_STRING);
     useEffect(() => {
         // ComponentDidMount
@@ -29,9 +32,9 @@ export const MessagingHeader = (props: IMessageingHeader) => {
     }, []);
     let subTitle = LOADING_STRING;
     if (!online)
-        subTitle = 'Online';
+        subTitle = language.ONLINE;
     else if (online && online !== LOADING_STRING)
-        subTitle = 'Last Seen ' + dateStringToTime(online);  // Online string to title
+        subTitle = language.LAST_SEEN + ' ' + dateStringToTime(online);  // Online string to title
     
     return (
         <Header title={props.username} back subTitle= {subTitle} />

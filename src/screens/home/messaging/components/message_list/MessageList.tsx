@@ -31,7 +31,6 @@ export const MessageList = (props: IMessageInput) => {
              console.log('Ekran: ', Actions.currentScene);
              console.log( msg.sender_id == props.user_id);
             if(Actions.currentScene == "messaging" && msg.sender_id == props.user_id){ // If reciever is this user
-                console.log('Merhaba')
                 getMessages(props.user_id, 0, false); // Get data again
             }
           })
